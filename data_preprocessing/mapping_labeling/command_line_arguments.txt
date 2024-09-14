@@ -1,0 +1,40 @@
+0ADD705:
+For Frame 236:
+python transformation_frame.py --frame_id 236 --x_center 1056 --y_center 325 --if_data 0ADD705/if_data/frame_236.txt --imc_data 0ADD705/imc_data/0ADD705_s0_p1_r43_a43_ac_236_960_full.csv --scaling 0.59 --flipping True --mode test --base_dir 0ADD705
+
+python mapPointSets.py --IF 0ADD705/transformed_if/if_data_transformed_236.txt --IMC 0ADD705/transformed_imc/imc_data_transformed_236.txt --frame_id 236 --slide_id 0ADD705 -o 0ADD705_matched_frame_236.txt --mode test --output_img_dir 0ADD705/matched_plots
+
+
+For Frame 1190:
+python transformation_frame.py --frame_id 1190 --x_center 748 --y_center 337 --if_data 0ADD705/if_data/frame_1190.txt --imc_data 0ADD705/imc_data/0ADD705_s0_p1_r42_a42_ac_1190_499_full.csv --scaling 0.59 --flipping True --base_dir 0ADD705
+
+python mapPointSets.py -x 0ADD705/transformed_if/if_data_transformed_1190.txt -y 0ADD705/transformed_imc/imc_data_transformed_1190.txt --frame_id 1190 --slide_id 0ADD705 -o 0ADD705/matched/0ADD705_matched_frame_1190.txt --mode test
+
+
+
+python mapPointSets.py --IF 0ADD710/transformed_if/if_data_transformed_68.txt --IMC 0ADD710/transformed_imc/imc_data_transformed_68.txt --frame_id 68 --slide_id 0ADD710 -o 0ADD710_matched_frame_68.txt --mode test --output_img_dir 0ADD710/matched_plots
+
+
+python transformation_whole_slide.py --imc_folder 0ADD705/imc_data/ --if_folder 0ADD705/if_data/ --reference_file 0ADD705/0ADD705_reference_cell_coords_in_IF.txt --scaling 0.59 --flipping True --slide_id 0ADD705 --base_dir 0ADD705
+
+
+python concatenate_matches.py --input_folder 0ADD705/matched --output_file 0ADD705/0ADD705_matched_full.txt
+
+
+
+python transformation_whole_slide.py --imc_folder 0ADD710/imc_data/ --if_folder 0ADD710/if_data/ --reference_file 0ADD710/0ADD710_reference_cell_coords_in_IF.txt --scaling 0.59 --flipping True --slide_id 0ADD710 --base_dir 0ADD710
+
+python concatenate_matches.py --input_folder 0ADD710/matched --output_file 0ADD710/0ADD710_matched_full.txt
+
+
+
+python plot.py --input_file 0ADD705/0ADD705_matched_full.txt
+
+
+python cell_gating.py --input_file 0ADD705/0ADD705_matched_full.txt --output_file 0ADD705/0ADD705_gated_full.txt
+
+
+python cell_gating.py --input_file 0ADD710/0ADD710_matched_full.txt --output_file 0ADD710/0ADD710_gated_full.txt
+
+
+python $program_path/extract_event_images.py -i $(slidepath) -d ./0ADD705_matched_frame_236.txt -o ./0ADD705_matched_frame_236.hdf5 -w 45 -v -f 235 -n 1

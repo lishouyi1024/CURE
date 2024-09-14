@@ -1,0 +1,3 @@
+
+
+python extract_event_images.py -i proc_0ADD705 -d 0ADD705_matched_frame_77.txt -o ./0ADD705.hdf5 -w 75 -c DAPI TRITC CY5 FITC BF -s 1 2305 4609 9217 6913
