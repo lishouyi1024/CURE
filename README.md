@@ -25,8 +25,6 @@ We aim to:
 
 ## Model Performances
 ![image](https://github.com/user-attachments/assets/768badbe-2f9f-474f-9832-f80e35d8d2a3)
-![image](https://github.com/user-attachments/assets/4dfb0ed6-484c-4149-ba80-bad4d83ad175)
-![image](https://github.com/user-attachments/assets/98c684d1-bd4e-479c-8cac-0a5306e85c6c)
 
 ## Repository Structure
 
