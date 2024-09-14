@@ -16,20 +16,17 @@ We aim to:
 - Perform morphological characterization of immune cells from IF microscopy images derived from peripheral blood samples of cancer patients.
 - Utilize deep learning and computer vision techniques to analyze instances of tumor-immune interaction in peripheral blood.
 - Develop state-of-the-art deep learning models to address critical questions in the field of liquid biopsy.
+- Learn latent feature space to investigate morphologically distinct  immune cell populations.
 
-## Student Involvement
-
-We are seeking a highly motivated undergraduate senior student with a strong interest in deep learning and computer vision to join our research team. The selected student will be an integral part of this exciting project, gaining hands-on experience with advanced deep learning models in computer vision.
-
-### Key Learning Opportunities
-- Engage in deep learning and computer vision techniques for analyzing IF microscopy images.
-- Contribute to groundbreaking research in the characterization of immune cells from peripheral blood.
-- Gain practical experience in using CNN model classifiers to address critical questions in cancer research and liquid biopsy.
+## Cell Classification Tasks
+- Binary classification: Lymphocytes (T-cells, B-cells, NK-cells) vs Myelocytes (Granulocytes, monocytes/macrophages).
+- 5-classes classification: T-cells, B-cells, NK-cells, Granulocytes, monocyte/macrophages.
+- 6-classes classification: CD4+ T-cells, CD8+ T-cells, B-cells, NK-cells, Granulocytes, monocyte/macrophages.
 
 ## Repository Structure
 
 - **`data_preprocessing/`**: Contains all essential steps to generate IF images and corresponding labels for training and testing.
-- **`classification_training/`**: Includes CNN model classifiers with training codes and pre-trained models.
+- **`classification_training/`**: Includes CNN model classifiers with training codes and pre-trained models, including Lymphocytes/Myelocytes classifier, Lymphocytes subclassifier, Myelocytes subclassifier, multi-class classifier. 
 
 ## Contact
 
